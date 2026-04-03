@@ -1,0 +1,14 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import os
+
+os.makedirs("visuals", exist_ok=True)
+
+# ── Chargement et renommage ───────────────────────────────────────
+df_marriage = pd.read_csv("D:/ENI/M2/projetPerso Github/dataviz-mariage/data/age-at-marriage-women.csv")
+df_marriage = df_marriage.rename(columns={"Mean age of women at first marriage": "Value"})
+
+print(df_marriage.head(3))
+print("Années disponibles :", sorted(df_marriage["Year"].unique()))
+
